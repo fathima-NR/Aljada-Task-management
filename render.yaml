@@ -3,7 +3,7 @@ services:
     name: aljada-task-api
     runtime: node
     rootDir: backend
-    buildCommand: npm install
+    buildCommand: npm install && node prepare-mongo.js
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
@@ -11,7 +11,5 @@ services:
         value: 22.14.0
       - key: JWT_SECRET
         generateValue: true
-      - key: MONGODB_URI
-        sync: false
       - key: CLIENT_ORIGIN
-        sync: false
+        value: https://aljada-task-desk.vercel.app

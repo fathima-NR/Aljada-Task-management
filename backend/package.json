@@ -12,9 +12,7 @@
     "dotenv": "^18.0.6",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
+    "mongodb-memory-server": "^10.4.3",
     "mongoose": "^9.11.0"
-  },
-  "devDependencies": {
-    "mongodb-memory-server": "^10.4.3"
   }
 }

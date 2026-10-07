@@ -1,3 +1,5 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import bcrypt from 'bcryptjs';
 import mongoose from 'mongoose';
 
@@ -34,6 +36,7 @@ let memoryServer;
 export async function connectDb() {
   let uri = process.env.MONGODB_URI;
   if (!uri) {
+    process.env.MONGOMS_DOWNLOAD_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '.mongo');
     const { MongoMemoryServer } = await import('mongodb-memory-server');
     memoryServer = await MongoMemoryServer.create();
     uri = memoryServer.getUri();

@@ -5,4 +5,5 @@ backend/data
 *.log
 .env
 backend/.env
+backend/.mongo
 frontend/.env
